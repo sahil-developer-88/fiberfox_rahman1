@@ -1,0 +1,99 @@
+<div class="row">
+
+
+  <div class="col-sm-10 col-md-offset-1">
+   <app-wizard step='5' id='{{subTopicId}}' type='boundary'></app-wizard>
+ </div>
+
+ <!---Topic with options view-->
+ <div *ngIf='subTopic && subTopic.HasBoundaryOptions'>
+   <div class="col-sm-2 col-sm-offset-1">
+    <div class="text-center"><img class="" src="../../assets/images/codico_logo.png" class="codico-logo"></div>
+  <img src="../../assets/images/ipek_logo.png" class="ipek-logo" >
+  <br/>
+    <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+      <img src="../../assets/images/sign-info.png" height='32' width="32">
+      <span class="text-white">
+        Specify your boundary conditions 
+      </span>
+    </div>
+  </div>
+
+  <div class="col-sm-8 right-box">
+    <app-breadcrumb [pageNumber]='currentPage' id='{{subTopicId}}' type='boundary'></app-breadcrumb>
+    <h4 class="my-subtopic-heading"> <strong>System of Objectives</strong></h4>
+<form #boundaryOptionsForm="ngForm" novalidate (ngSubmit)="submitOptionsForm(boundaryOptionsForm)" class="form-horizontal">
+    <div class="row row-sm">
+      <div class="col-sm-4" *ngFor="let boundary of boundarys; let i = index" [attr.data-index]="i">
+        <h5 class="option-header">{{boundary.Name}}</h5>
+        <ul  class="boundary-options">
+          <li *ngFor='let boundaryOption of boundary.Options'>
+            <div class="radio-option">
+            
+            <div *ngIf='boundary.IsMultiSelect' [attr.data-id]='boundaryOption.Id'>
+              <input id='{{boundaryOption.Id}}' type="checkbox" class="radio-custom"  
+              name="Check_{{boundaryOption.Id}}" (change)='boundaryOptionChecked(boundary,boundaryOption,$event)'
+              value="{{boundary.Id}}_{{boundaryOption.Id}}_{{boundaryOption.Value}}"  [ngModel]="boundaryOption.Chk_Id">
+              <label for='{{boundaryOption.Id}}' class="radio-custom-label">{{boundaryOption.Text}}</label>
+              </div>
+
+              <div *ngIf='!boundary.IsMultiSelect'>
+              <input id='{{boundaryOption.Id}}' type="radio" class="radio-custom"  
+              name="Radio_{{boundary.Id}}" (change)='boundaryOptionChecked(boundary,boundaryOption,$event)'
+              value="{{boundary.Id}}_{{boundaryOption.Id}}_{{boundaryOption.Value}}"  [ngModel]="boundaryOption.Id">
+              <label for='{{boundaryOption.Id}}' class="radio-custom-label">
+             <a *ngIf='boundaryOption.isChecked' href="javascript:void(0)" (click)='resetOption(boundary,boundaryOption)' class="refresh-icon" ><i class="fa fa-refresh"></i></a>{{boundaryOption.Text}}</label>
+            </div>
+
+            </div> </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary"  (click)='previousView()'>Back</button>
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-danger"  (click)='skipView()'>Skip</button>
+          <button type="submit" class="btn btn-primary" >Next</button>
+        </div>
+        <p></p><p></p>
+      </div>
+    </form>
+    </div>
+  </div>
+  <!---Topic with options view-->
+  <div *ngIf="subTopic && subTopic.HasBoundaryOptions===false">
+    <form #boundaryForm="ngForm" novalidate (ngSubmit)="submitForm(boundaryForm)" class="form-horizontal">
+   <div class="col-sm-2 col-sm-offset-1">
+    <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+      <img src="../../assets/images/sign-info.png" height='32' width="32">
+      <span class="text-white">
+        Select a topic/topics you would like to find out more about.
+      </span>
+    </div>
+  </div>
+
+  <div class="col-sm-8">
+    <ol class="content">
+      <li *ngFor='let boundary of boundarys'>          
+        <input id='{{boundary.Id}}' class="radio-custom" name="boundaryId"
+        [ngModel]="boundary.Id" type="radio" checked [value]='boundary.Id'>
+        <label for='{{boundary.Id}}' class="radio-custom-label">{{boundary.Name}}
+        </label>
+
+      </li>
+    </ol>
+
+    <div class="col-sm-12">
+      <button type="button" class="btn btn-primary"  (click)='previousView()'>Back</button>
+      <div class="form-group pull-right">
+        <button type="button" class="btn btn-danger"  (click)='skipView()'>Skip</button>
+        <button type="submit" class="btn btn-primary"  >Next</button>
+      </div>
+      <p></p><p></p>
+    </div>
+  </div>
+    </form>
+  
+
+</div>

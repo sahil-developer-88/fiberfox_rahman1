@@ -1,0 +1,81 @@
+<div class="row">
+
+	<div class="col-sm-10 col-md-offset-1">
+		<app-wizard step='6' type='result'></app-wizard>
+	</div>
+
+<!-- <div class='col-sm-2 col-sm-offset-1'>
+	<div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+		<img src="/src/assets/images/sign-info.png" height='32' width="32">
+		<span class="text-white">You are on the result page.</span>
+	</div>
+</div>
+<div class="clearfix"></div>-->
+<!-- <div class="col-sm-10 col-sm-offset-1">
+	<h3 class="text-center text-info">Under Development</h3>
+</div> -->
+<div class="col-sm-10 col-sm-offset-1 result-div" style='display:block;'>
+	<div class="col-sm-3">
+		<div *ngIf='subTopicDetails' >
+			<div *ngFor='let subTopicDetail of subTopicDetails'>
+				<app-resultMenu [subTopicId]='subTopicId' [subtopicDetailId]='subTopicDetail.Id' (onShowContent)='onShowContent($event)'></app-resultMenu>
+			</div>
+		</div>
+		<!-- <div *ngFor='let subTopicDetail of subTopicDetails'>
+			<h4 class="text-info">{{subTopicDetail.Name}}</h4>
+		<div class="fancy-collapse-panel">onShowContent			<div onShowContent="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default" *ngFor='let menuItem of menuItems'>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="javascript:void(0)" data-target="collapseOne"
+							(click)="toggleMenuItem(menuItem.Id)">{{menuItem.Name}}
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" [class.in]="expandedMenuId===menuItem.Id">
+					<div class="panel-body">
+						<ul class="list-group">
+							<li class="list-group-item" *ngFor="let subMenuItem of subMenuItems">
+								<a href="javascript:void(0)" (click)="showContent(subMenuItem)">{{subMenuItem.Name}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
+</div>-->
+</div>
+
+<div class="col-sm-9">
+	<app-breadcrumb [pageNumber]='currentPage' id='{{subTopicId}}' type='result'></app-breadcrumb>
+	<div class="content-div" >
+		<div *ngIf='article;else elseBlock;'>
+			<h4 class="text-center text-primary">{{article.Heading}}</h4>
+			<p style="word-wrap: break-word;" [innerHtml]='article.Description'>
+				
+			</p>
+		</div>
+		<ng-template #elseBlock>
+			<!-- <h4 *ngIf='!subMenuId' class="text-center text-danger">Please select menu item to get details.</h4> -->
+			<!-- <app-thankYou *ngIf='!subMenuId'></app-thankYou> -->
+
+			<h4 *ngIf='subMenuId' class="text-center text-danger">No Content Found</h4>
+		</ng-template>
+	</div>
+</div>
+
+<div class="col-sm-12">
+	<p></p>
+	<button type="button" class="btn btn-primary"  (click)='previousView()'>Back</button>
+
+	<button type="button" (click)='finishResult()' class="btn btn-primary pull-right"  >Finish</button>
+	<p></p><p></p>
+</div>
+</div>
+</div>
+
+
+
+
+

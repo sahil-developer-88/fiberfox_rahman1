@@ -1,0 +1,142 @@
+<!-- http://jasonwatmore.com/post/2017/04/19/angular-2-4-router-animation-tutorial-example -->
+<div class="row justify-content-end">
+  <div class="col-sm-6 col-sm-offset-3" >  
+    <div class="card shadow">
+      <form #form='ngForm' (ngSubmit)='registerUser()' *ngIf='active'>
+
+        <fieldset>
+          <legend>
+            <h2>Register Here</h2>
+          </legend>
+
+          <div class="row">
+            <div class="col-sm-6">
+              
+              <div class="form-group" [ngClass]="{'has-error':Email.invalid && Email.touched}">
+                <label for='email' class="form-control-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter the email" required [(ngModel)]='registerModel.Email' pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                #Email='ngModel' />
+                <div class="invalid-feedback"  *ngIf='Email.invalid && Email.touched'>Please enter valid email</div>
+                  <!-- <div  class="invalid-feedback" *ngIf="Email.errors && Email.errors.pattern">
+                Email is invalid
+            </div> -->
+              </div>
+              
+
+              <div class="form-group" [ngClass]="{'has-error':UserName.invalid && UserName.touched}">
+                <label for='UserName' class="form-control-label">User Name</label>
+                <input type="text" class="form-control" name="UserName" placeholder="Enter the username" required [(ngModel)]='registerModel.UserName'
+                #UserName='ngModel' />
+                <div class="invalid-feedback"  *ngIf='UserName.invalid && UserName.touched'>Please enter valid username
+                </div>
+              </div>
+
+              <div class="form-group" [ngClass]="{'has-error':Password.invalid && Password.touched}">
+                <label for="Password" class="form-control-label">Password</label>
+                <input type="password" minlength="6" class="form-control" placeholder="Enter the password" name="Password" required [(ngModel)]='registerModel.Password'
+                #Password='ngModel'>
+                <div class="invalid-feedback"  *ngIf='Password.invalid && Password.touched'>Please enter atleast 6 characters password</div>
+              </div>
+
+              <div class="form-group" [ngClass]="{'has-error':ConfirmPassword.invalid && ConfirmPassword.touched}">
+                <label for="ConfirmPassword" class="form-control-label">Re Password</label>
+                <input type="password" minlength="6" class="form-control" placeholder="Enter the confirm password" name="ConfirmPassword" required [(ngModel)]='registerModel.ConfirmPassword' validateEqual="password"
+                #ConfirmPassword='ngModel'>
+                <div class="invalid-feedback"  *ngIf='ConfirmPassword.invalid && ConfirmPassword.touched'>Password and confirm password does not match.</div>
+              </div>
+
+
+            </div>
+
+            <div class="col-sm-6">
+
+
+              <div class="form-group" [ngClass]="{'has-error':IndustryField.invalid && IndustryField.touched}">
+                <label for="IndustryField" class="form-control-label">Industry Field</label>
+                <select class="form-control"  name="IndustryField" required [(ngModel)]='registerModel.IndustryField'
+                #IndustryField='ngModel'>
+                <option value="Automotive industry">Automotive industry</option>
+                <option value="Aerospace">Aerospace</option>
+                <option value="Construction industry">Construction industry</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Plant construction">Plant construction</option>
+                <option value="Rail transport">Rail transport</option>
+                <option value="Shipbuilding">Shipbuilding</option>
+                <option value="Other">Other</option>
+              </select>
+              <div class="invalid-feedback"  *ngIf='IndustryField.invalid && IndustryField.touched'>Please select IndustryField</div>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error':ActivityField.invalid && ActivityField.touched}">
+              <label for="ActivityField" class="form-control-label">Activity Field</label>
+              <select class="form-control"  name="ActivityField" required [(ngModel)]='registerModel.ActivityField'
+              #ActivityField='ngModel'>
+              <option value="Research and Development">Research and Development</option>
+                <option value="Planning">Planning</option>
+                <option value="Conception">Conception</option>
+                <option value="Design">Design</option>
+                <option value="Validation and Verification">Validation and Verification</option>
+              <option value="Production">Production</option>
+              <option value="Market launch">Market launch</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="invalid-feedback"  *ngIf='ActivityField.invalid && ActivityField.touched'>Please select ActivityField</div>
+          </div>
+
+          <div class="form-group" [ngClass]="{'has-error':SpecifyActivityField.invalid && SpecifyActivityField.touched}">
+            <label for='SpecifyActivityField' class="form-control-label">Specify ActivityField</label>
+            <input type="text" class="form-control" name="SpecifyActivityField" placeholder="Enter the SpecifyActivityField" required [(ngModel)]='registerModel.SpecifyActivityField'
+            #SpecifyActivityField='ngModel' />
+
+            <div class="invalid-feedback"  
+            *ngIf="SpecifyActivityField.invalid && (SpecifyActivityField.dirty || SpecifyActivityField.touched)">
+          </div>
+        </div>
+
+        
+        <div class="form-group" [ngClass]="{'has-error':ExperienceLevel.invalid && ExperienceLevel.touched}">
+          <label for="ExperienceLevel" class="form-control-label">Experience Level</label>
+          <select class="form-control"  name="ExperienceLevel" required [(ngModel)]='registerModel.ExperienceLevel'
+          #ExperienceLevel='ngModel'>
+          <option value="No experience">No experience</option>
+          <option value="1-2 years">1-2 years</option>
+          <option value="3-5 years">3-5 years</option>
+          <option value="6-10 years">6-10 years</option>
+          <option value="11-15 years">11-15 years</option>
+          <option value="16-20 years">16-20 years</option>
+          <option value=">20 years">>20 years</option>
+        </select>
+        <div class="invalid-feedback"  *ngIf='ExperienceLevel.invalid && ExperienceLevel.touched'>Please select ExperienceLevel</div>
+      </div>
+
+      <div class="form-group">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]='registerModel.RememberMe' name="RememberMe" value='true' #RememberMe='ngModel'>
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Remember Me</span>
+        </label>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="pull-right">
+      <input type="submit" class="btn btn-primary " value="Register" [disabled]='form.invalid || submitted'>
+      <a class="btn btn-default" routerLink="/home">Cancel</a>  
+    </div>
+  </div>
+</fieldset>
+</form>
+<div class="m-b">
+  Alread have an account ? <a routerLink="/login" class="text-danger">Login here.</a>
+</div>
+<app-model-errors [errors]="errors"></app-model-errors>   
+
+</div>
+
+</div>
+</div>

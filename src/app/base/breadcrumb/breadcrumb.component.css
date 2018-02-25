@@ -1,0 +1,17 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px; 
+}
+
+.breadcrumb{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 100%;
+}
+.breadcrumb li a{
+padding-top: 15px;
+padding-bottom: 15px;
+font-size: 14px;
+
+
+}

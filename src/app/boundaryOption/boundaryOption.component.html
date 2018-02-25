@@ -1,0 +1,23 @@
+<div class="col-sm-8">
+<ul  class="param-options">
+      <li *ngFor='let boundaryOption of boundaryOptions'><span href="javascript:void(0)" >
+      {{boundaryOption.Text}}
+  		</span></li>
+    </ul>
+</div>
+
+<div class="col-sm-4">
+<ul class="param-radio" *ngFor='let boundaryOption of boundaryOptions'>
+      <li>
+        <input id='low_{{boundaryOption.Id}}' type="radio" class="radio-custom"  name="{{boundaryOption.Id}}" value="low_{{boundaryOption.Id}}"  [ngModel]="boundaryOption.Id">
+          <label for='low_{{boundaryOption.Id}}_{{boundaryOption.Value}}' class="radio-custom-label"></label>
+        
+        <input id='med_{{boundaryOption.Id}}' type="radio" class="radio-custom" name="{{boundaryOption.Id}}" value="med_{{boundaryOption.Id}}_{{boundaryOption.Value}}" [ngModel]="boundaryOption.Id">
+          <label for='med_{{boundaryOption.Id}}' class="radio-custom-label"></label>
+        
+        <input  id='high_{{boundaryOption.Id}}' type="radio" class="radio-custom" name="{{boundaryOption.Id}}" value="high_{{boundaryOption.Id}}_{{boundaryOption.Value}}" [ngModel]="boundaryOption.Id">
+        <label  for='high_{{boundaryOption.Id}}' class="radio-custom-label"></label>
+      </li>
+    </ul>
+
+</div>

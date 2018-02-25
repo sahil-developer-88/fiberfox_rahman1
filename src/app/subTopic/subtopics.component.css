@@ -1,0 +1,45 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ul.phases{
+list-style: none;
+
+}
+ul.phases li
+{
+padding: 7px;
+border: 2px solid darkgray;
+background-color: lightgray;
+border-radius: 10px;
+margin: 10px auto;
+}
+
+ul.phases li.active
+{
+ background-color: #000;
+ margin-bottom: 20px;   
+}
+
+ul.phases li.active a
+{
+    
+}
+ul.phases li a{
+    color:#FFF;    
+}
+
+ul.content{
+list-style: none;
+
+}
+
+ul.content li{
+border: 1px solid gray;
+padding: 10px;   
+margin:20px auto ; 
+}
+
+ul.content li a{
+    
+}

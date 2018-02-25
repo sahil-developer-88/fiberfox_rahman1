@@ -1,0 +1,140 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.box.heading
+{
+    border:1px solid #27458b; 
+}
+.box.heading, .box.heading a{
+    text-align: center;
+    background-color:#FFF;
+    color:#27458b;    
+    
+}
+
+.box{
+	
+    margin: 2px auto;
+     border: 1px solid #7f7f7f; 
+    border-radius: 10px;
+    padding: 7px;
+    
+    background-color: #e3e3e3;
+    min-height: 25px;
+} 
+
+.box a{
+    font-size: 14px;
+    font-weight: 600;
+    color: #7f7f7f;
+    text-decoration: none;
+}
+
+.box.defaultText{
+    background-color: #27458b;
+    text-align: center;
+    border-radius: 0;
+    /* text-align: center; */
+}
+.box.defaultText a{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+
+.box.active{
+    background-color: #7f7f7f;
+    /* text-align: center; */
+}
+.box.active a{
+    color: #FFF;
+    text-decoration: none;
+
+}
+
+.box.emptyCell{
+    background-color: #FFF;
+    border: none;
+    /* border-bottom: 2px dotted darkgray;
+    border-right: 2px dotted darkgray; */
+    border-radius: 0;
+    /* padding: 15px; */
+
+ /*    margin-left: -30px;     */
+}
+
+.box.topic-box{
+    display: none;
+}
+.box.topic-box.active{
+    display: block;
+    text-align: center;
+    background-color: #5f6991;
+    min-width: 20px;
+    padding: 2px;
+    margin-top: 5px;
+}
+
+.arrow {
+    width:100%;
+}
+
+.line {
+    margin-top:10px;
+    width:88.5%;
+    background:darkgray;
+    height:3px;
+    float:left;
+}
+.point {    
+    width: 0;
+    height: 0; 
+    border-top: 13px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-left: 15px solid darkgray;
+    float:right;
+}
+
+.col-sm-4 .line{
+width:94.9%;
+}
+.col-sm-6 .line{
+    width:96.7%;
+}
+
+
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Portrait
+\* ------------------------------------------------------------ */
+/* Portrait */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /*@media only screen and (max-width: 768px) {*/
+.col-sm-6 .line{
+    width:94.1%;
+}
+}
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Landscape
+\* ------------------------------------------------------------ */
+/* Landscape */
+@media only screen and (min-device-width : 420px) and (max-device-width : 1024px) and (orientation: landscape) {
+.col-sm-6 .line{
+    width:96.4%;
+}
+}
+
+
+/* ------------------------------------------------------------ *\
+                       Tablet Orientation
+\* ------------------------------------------------------------ */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.col-sm-6 .line{
+    width:93.7%;
+}
+}

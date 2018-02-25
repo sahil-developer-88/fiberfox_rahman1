@@ -1,0 +1,21 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px; 
+}
+.box{
+	
+	margin:10px auto; 
+	/* min-height: 330px; */
+	padding: 10px;
+}
+
+.box.last{
+	min-height: 310px;
+}
+
+ .cat-head{
+margin:10px auto;
+font-weight: 700;
+font-style: italic; 
+ }
+

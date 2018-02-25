@@ -1,0 +1,98 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+div.radio-heading{
+padding-left: 12px;
+
+}
+div.radio-heading label{
+  margin-left:9px; 
+  margin-right:1px; 
+  
+}
+
+.my-subtopic-heading{
+  color: #FFF;
+  background-color: #3f5a9a;
+  padding: 5px;
+  border: 1px solid #3f5a9a;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+ol.content{
+	margin-top: 50px;
+list-style: none;
+counter-reset:mycounter;
+padding-left: 0px;
+padding-right: 50px;
+}
+
+ol.content li{
+border: 1px solid gray;
+padding: 10px;   
+margin:7px auto ; 
+
+position:relative; 
+  margin-left: 35px;
+  
+}
+
+ol.content li a{
+    
+}
+
+ol.content li:before {
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:5px;
+  left:-37px;
+  width:32px;
+  height:32px;
+  line-height:32px;
+  /* border-radius:50%; */
+  color:#fff;
+  background:teal;
+  text-align:center;
+}
+
+
+
+.option-header{
+  padding: 10px;
+  background-color: darkgray;
+  color: #000;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+ul.boundary-options{
+  list-style: none;
+border-radius: 2px;
+padding:0px; 
+}
+
+ul.boundary-options li{
+  color: #000;
+  border-radius: 5px;
+  margin: 5px auto;
+  margin-top: 0px;
+  border: 1px solid #000;
+}
+.radio-option{
+  font-size: 14px;
+  font-weight: normal;  
+}
+.refresh-icon i{
+      color: blue;
+    float: right;
+    padding-top: 3px;
+    padding-right: 3px;
+    }
+    div.overlay{z-index:999;background:rgba(255,255,255,.5);pointer-events: none;
+    opacity: 0.4;}

@@ -1,0 +1,6 @@
+<ol class="breadcrumb" *ngIf='breadCrumbs && breadCrumbs.length>0'>
+    
+    <li><a href="#/home">Home</a></li>
+    <li *ngFor='let breadCrumb of breadCrumbs'>
+    	<a routerLinkActive='active' routerLink="{{breadCrumb.RedirectUrl}}" [title]='breadCrumb.Name'>{{breadCrumb.Name| truncate:[20, '...'] }}</a></li>
+<ol>

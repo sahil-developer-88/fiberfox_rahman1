@@ -1,0 +1,110 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.my-subtopic-heading{
+  color: #FFF;
+  background-color: #3f5a9a;
+  padding: 5px;
+  border: 1px solid #3f5a9a;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+div.radio-heading{
+padding-left: 12px;
+}
+div.radio-heading label{
+  margin-left:9px; 
+  margin-right:1px; 
+  
+}
+
+ol.content{
+	margin-top: 50px;
+list-style: none;
+counter-reset:mycounter;
+padding-left: 0px;
+padding-right: 50px;
+}
+
+ol.content li{
+
+padding: 4px;   
+margin:5px auto ; 
+position:relative; 
+margin-left: 35px;
+
+background: #b3b3b3;
+background: -moz-linear-gradient(left, #b3b3b3 0%, #b3b3b3 26%, #b6b6b6 27%, #b4b4b4 27%, #b6b6b6 28%, #b6b6b6 30%, #b9b9b9 30%, #b9b9b9 32%, #bdbdbd 33%, #bebebe 35%, #c0c0c0 35%, #c9c9c9 39%, #d1d1d1 42%, #d3d3d3 42%, #d2d2d2 43%, #d7d7d7 44%, #d7d7d7 45%, #dcdcdc 46%, #dcdcdc 47%, #d9d9d9 47%, #c7c7c7 54%, #c2c2c2 56%, #bfbfbf 57%, #b8b8b8 59%, #b9b9b9 60%, #b4b4b4 61%, #b5b5b5 61%, #aeaeae 63%, #acacac 65%, #a9a9a9 65%, #a9a9a9 66%, #a4a4a4 67%, #a2a2a2 68%, #9b9b9b 70%, #9a9a9a 71%, #979797 71%, #959595 73%, #919191 74%, #919191 74%, #8b8b8b 76%, #929292 77%, #afafaf 81%, #b2b2b2 82%, #b9b9b9 83%, #b9b9b9 83%, #bcbcbc 83%, #c0c0c0 84%, #c4c4c4 85%, #c3c3c3 85%, #d0d0d0 87%, #d0d0d0 87%, #d3d3d3 87%, #dcdcdc 89%, #e2e2e2 91%, #e1e1e1 91%, #e4e4e4 91%, #f1f1f1 95%, #f1f1f1 100%);
+background: -webkit-linear-gradient(left, #b3b3b3 0%,#b3b3b3 26%,#b6b6b6 27%,#b4b4b4 27%,#b6b6b6 28%,#b6b6b6 30%,#b9b9b9 30%,#b9b9b9 32%,#bdbdbd 33%,#bebebe 35%,#c0c0c0 35%,#c9c9c9 39%,#d1d1d1 42%,#d3d3d3 42%,#d2d2d2 43%,#d7d7d7 44%,#d7d7d7 45%,#dcdcdc 46%,#dcdcdc 47%,#d9d9d9 47%,#c7c7c7 54%,#c2c2c2 56%,#bfbfbf 57%,#b8b8b8 59%,#b9b9b9 60%,#b4b4b4 61%,#b5b5b5 61%,#aeaeae 63%,#acacac 65%,#a9a9a9 65%,#a9a9a9 66%,#a4a4a4 67%,#a2a2a2 68%,#9b9b9b 70%,#9a9a9a 71%,#979797 71%,#959595 73%,#919191 74%,#919191 74%,#8b8b8b 76%,#929292 77%,#afafaf 81%,#b2b2b2 82%,#b9b9b9 83%,#b9b9b9 83%,#bcbcbc 83%,#c0c0c0 84%,#c4c4c4 85%,#c3c3c3 85%,#d0d0d0 87%,#d0d0d0 87%,#d3d3d3 87%,#dcdcdc 89%,#e2e2e2 91%,#e1e1e1 91%,#e4e4e4 91%,#f1f1f1 95%,#f1f1f1 100%);
+background: linear-gradient(to right, #b3b3b3 0%,#b3b3b3 26%,#b6b6b6 27%,#b4b4b4 27%,#b6b6b6 28%,#b6b6b6 30%,#b9b9b9 30%,#b9b9b9 32%,#bdbdbd 33%,#bebebe 35%,#c0c0c0 35%,#c9c9c9 39%,#d1d1d1 42%,#d3d3d3 42%,#d2d2d2 43%,#d7d7d7 44%,#d7d7d7 45%,#dcdcdc 46%,#dcdcdc 47%,#d9d9d9 47%,#c7c7c7 54%,#c2c2c2 56%,#bfbfbf 57%,#b8b8b8 59%,#b9b9b9 60%,#b4b4b4 61%,#b5b5b5 61%,#aeaeae 63%,#acacac 65%,#a9a9a9 65%,#a9a9a9 66%,#a4a4a4 67%,#a2a2a2 68%,#9b9b9b 70%,#9a9a9a 71%,#979797 71%,#959595 73%,#919191 74%,#919191 74%,#8b8b8b 76%,#929292 77%,#afafaf 81%,#b2b2b2 82%,#b9b9b9 83%,#b9b9b9 83%,#bcbcbc 83%,#c0c0c0 84%,#c4c4c4 85%,#c3c3c3 85%,#d0d0d0 87%,#d0d0d0 87%,#d3d3d3 87%,#dcdcdc 89%,#e2e2e2 91%,#e1e1e1 91%,#e4e4e4 91%,#f1f1f1 95%,#f1f1f1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3b3b3', endColorstr='#f1f1f1',GradientType=1 );
+
+  
+}
+
+ol.content li a{
+    
+}
+
+ol.content li:before {
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:5px;
+  left:-37px;
+  width:32px;
+  height:32px;
+  line-height:32px;
+  /* border-radius:50%; */
+  color:#fff;
+  background:teal;
+  text-align:center;
+}
+
+
+
+
+
+/******************Options*********************/
+/* ul.param-options{
+list-style: none;
+padding-left:0px;
+}
+ul.param-options li
+{
+padding: 7px;
+border: 2px solid darkgray;
+background-color: #FFF;
+border-radius: 10px;
+margin: 10px auto;
+}
+
+ul.param-options li a, ul.param-options li span{
+    color:darkgray;    
+}
+
+
+ul.param-radio{
+list-style: none;
+padding-left: 0px;
+
+
+}
+
+ul.param-radio.bottom{
+  margin-top: 95px;
+}
+
+ul.param-radio li
+{
+margin: 20px auto;
+}
+
+ul.param-radio li label{
+  margin-left: 7px;
+  margin-right: 7px;
+} */

@@ -1,0 +1,50 @@
+<div class="target-options" *ngIf='commonParamId && topicParamOptions'>
+<div class='row'
+*ngFor='let topicParamOption of topicParamOptions' 
+      attr.data-text='{{commonParamId}}' attr.data-isopposite='{{isOpposite}}' attr.data-val='{{topicParamOption.Id}}' [attr.data-topicParamId]="topicParamId">
+  <div class="col-sm-8 lbl">
+    <div class="param-options">      
+        <div href="javascript:void(0)">
+          {{topicParamOption.Text}}
+          <a *ngIf='topicParamOption.isChecked' href="javascript:void(0)" (click)='resetOption(topicParamOption)' class="refresh-icon"><i class="fa fa-refresh"></i></a>
+        </div>       
+      </div>  
+</div>
+
+<div class="col-sm-4">  
+    <div class="rdo">
+      <div class="param-options">
+        <input id='low_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options"  name="{{topicParamOption.Id}}"   [attr.data-topicParamId]="topicParamId"  [attr.data-priority]="1"      
+        value="{{topicParamId}}_{{topicParamOption.Id}}_1"  [ngModel]="topicParamOption.Id" (change)='topicParamChange(topicParamOption,$event)'>
+        <label for='low_{{topicParamOption.Id}}' class="radio-custom-label low-color" ></label>
+      </div>
+
+       <!-- <div class="param-options">
+        <input id='med_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options" name="{{topicParamOption.Id}}"  [attr.data-topicParamId]="topicParamId" [attr.data-priority]="2"      
+        value="{{topicParamId}}_{{topicParamOption.Id}}_2" [ngModel]="topicParamOption.Id" (change)='topicParamChange(topicParamOption,$event)'>
+        <label for='med_{{topicParamOption.Id}}' class="radio-custom-label med-color"></label>
+      </div>
+
+      <div class="param-options">
+        <input  id='high_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options" name="{{topicParamOption.Id}}" [attr.data-topicParamId]="topicParamId" [attr.data-priority]="3"      
+        value="{{topicParamId}}_{{topicParamOption.Id}}_3" [ngModel]="topicParamOption.Id"  (change)='topicParamChange(topicParamOption,$event)'>
+        <label  for='high_{{topicParamOption.Id}}' class="radio-custom-label high-color"></label>
+      </div> -->
+    </div>    
+</div>
+
+</div>
+</div>
+
+<!--Old Algo Data UI-->
+  <!-- <input id='low_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options"  name="{{topicParamOption.Id}}"  attrs.data
+        value="{{topicParamId}}_{{topicParamOption.Id}}_1"  [ngModel]="topicParamOption.Id" (change)='topicParamChange(topicParamOption,$event)'>
+          <label for='low_{{topicParamOption.Id}}' class="radio-custom-label low-color" ></label>
+        
+        <input id='med_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options" name="{{topicParamOption.Id}}" 
+        value="{{topicParamId}}_{{topicParamOption.Id}}_2" [ngModel]="topicParamOption.Id" (change)='topicParamChange(topicParamOption,$event)'>
+          <label for='med_{{topicParamOption.Id}}' class="radio-custom-label med-color"></label>
+        
+        <input  id='high_{{topicParamOption.Id}}' type="radio" class="radio-custom topicParam_radio_options" name="{{topicParamOption.Id}}"  (change)='topicParamChange(topicParamOption,$event)'
+        value="{{topicParamId}}_{{topicParamOption.Id}}_3" [ngModel]="topicParamOption.Id">
+        <label  for='high_{{topicParamOption.Id}}' class="radio-custom-label high-color"></label> -->

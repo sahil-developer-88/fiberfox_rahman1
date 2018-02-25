@@ -1,0 +1,56 @@
+<div class="row">
+
+
+  <div class="col-sm-10 col-md-offset-1">
+   <app-wizard step='3' id='{{subCategoryId}}' type='topics'></app-wizard>
+ </div>
+
+
+<div class='col-sm-2 col-sm-offset-1'>
+  <div class="text-center"><img class="" src="../../assets/images/codico_logo.png" class="codico-logo"></div>
+  <img src="../../assets/images/ipek_logo.png" class="ipek-logo" >
+  <br/>
+  <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+    <img src="../../assets/images/sign-info.png" height='32' width="32">
+    <span class="text-white">
+      Select a phase of product development in  which you are situated now.<br> Information about different phases and product engineering activities can be obtained by clicking on the corresponding term.
+</span>
+  </div>
+</div>
+
+<div class="col-sm-9 right-box">
+  <app-breadcrumb [pageNumber]='currentPage' id='{{subCategoryId}}' type='topics'></app-breadcrumb>
+
+<div class="col-sm-4" style='border:2px dashed #27458b;padding: 10px;margin-bottom: 10px;'>
+    <div class="box defaultText">
+      <a href="javascript:void(0);" style='cursor:default;'>
+        Activities of product engineering
+      </a>
+    </div>
+  
+<ul class="phases">
+  <li *ngFor='let activity of activities' [class.active]='activity.Id==activityId'>
+    <a href="javascript:void(0);" (click)='redirectPhase(activity)'>{{activity.Name}}</a>
+  </li>
+</ul>
+</div>
+
+
+<div class="col-sm-8">
+  <h4 class="topic-heading" *ngIf='topic'>{{topic.Name}}</h4>
+<ul class="content">
+  <li *ngFor='let subTopic of subTopics'> 
+    <a *ngIf='subTopic.IsActive'  (click)='subtopicSelected(subTopic)' href="javascript:void(0)">
+    {{subTopic.Name}}</a>
+    <span *ngIf='!subTopic.IsActive'>{{subTopic.Name}}</span>
+</li>
+</ul>
+</div>
+
+<div class="col-sm-12">
+  <button type="button" class="btn btn-primary" (click)='previousView()'>Back</button>
+<p></p><p></p>
+</div>
+
+</div>
+</div>

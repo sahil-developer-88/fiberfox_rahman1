@@ -1,0 +1,165 @@
+.wizard{
+    float:right;
+    padding-bottom: 15px;
+  }
+.wizard li {
+  background-color: #a3a3a3;
+  border-radius: 5px;
+  display: inline;
+  padding: 10px 30px 10px 40px;
+  margin-right: 15px;
+  width: auto;
+}
+.wizard li a{color:#FFF;text-decoration:none;}
+.wizard li::before, .wizard li::after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: transparent;
+    border-left-color: #fff;
+  border-radius: 10px;
+}
+
+.wizard li::before {
+  border-width: 25px; 
+  margin-top: -16px;
+  margin-left: -40px;
+}
+
+
+.wizard li::after {
+  border-left-color: #a3a3a3;
+  border-width: 21px; 
+  margin-top: -11px;
+  margin-left: 24px;
+}
+
+.wizard li.selected {
+  background-color: #009682;
+  color: #fff;
+}
+.wizard li.selected::after {
+  border-left-color: #009682;
+}
+
+.wizard li.disabled {
+  background-color: #a1c4bb;
+  color: #fff;
+  cursor:not-allowed;
+}
+.wizard li.disabled::after
+{
+  border-left-color: #a1c4bb;
+  cursor:not-allowed;
+}
+.wizard li.disabled a{
+ cursor:not-allowed; 
+}
+
+/*.wizard li:last-child::after {
+  border-left-color: transparent;
+}*/
+
+
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Portrait
+\* ------------------------------------------------------------ */
+/* Portrait */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /*@media only screen and (max-width: 768px) {*/
+.wizard li {
+  padding: 5px 10px 5px 10px;
+  width: 80%;
+  float: left;
+  margin:5px auto; 
+}
+
+.wizard li a{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.wizard li::before {
+  border-width: 25px; 
+  margin-top: -16px;
+  margin-left: -18px;
+}
+
+
+.wizard li::after {
+  border-width: 18px; 
+  margin-top: -28px;
+  margin-left: 184px;
+}
+
+}
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Landscape
+\* ------------------------------------------------------------ */
+/* Landscape */
+@media only screen and (min-device-width : 420px) and (max-device-width : 1024px) and (orientation: landscape) {
+
+.wizard li {
+  padding: 5px 10px 5px 10px;
+  width: 85%;
+  float: left;
+  margin:5px auto; 
+}
+
+.wizard li a{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.wizard li::before {
+  border-width: 25px; 
+  margin-top: -16px;
+  margin-left: -18px;
+}
+
+
+.wizard li::after {
+  border-width: 18px; 
+  margin-top: -28px;
+  margin-left: 334px;
+}
+}
+
+
+/* ------------------------------------------------------------ *\
+                       Tablet Orientation
+\* ------------------------------------------------------------ */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+.wizard li {
+  background-color: #a3a3a3;
+  border-radius: 5px;
+  display: inline;
+  padding: 5px 8px 5px 8px;
+  width: auto;
+  margin-right: 18px;
+}
+.wizard li::before {
+    border-width: 25px; 
+  margin-top: -16px;
+  margin-left: -18px;
+}
+
+.wizard li a{
+  padding-left: 5px;
+}
+.wizard li::after {
+  border-width: 16px; 
+  margin-top: -6px;
+  margin-left: 1px;
+}
+
+
+}

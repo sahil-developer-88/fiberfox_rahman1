@@ -1,0 +1,147 @@
+<div class="row">
+
+
+  <div class="col-sm-10 col-md-offset-1">
+   <app-wizard step='4' id='{{subTopicId}}' type='targets'></app-wizard>
+ </div>
+
+
+ <!---Topic with options view-->
+ <div *ngIf='subTopicDetail && subTopicDetail.HasTargetOptions'>
+  <form #topicParamOptionsForm="ngForm" novalidate (ngSubmit)="submitOptionsForm(topicParamOptionsForm)" class="form-horizontal">
+   <div class="col-sm-2 col-sm-offset-1">
+    <div class="text-center"><img class="" src="../../assets/images/codico_logo.png" class="codico-logo"></div>
+  <img src="../../assets/images/ipek_logo.png" class="ipek-logo" >
+  <br/>
+    <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+      <img src="../../assets/images/sign-info.png" height='32' width="32">
+      <span class="text-white">
+        Select a topic/topics you would like to find out more about11.
+      </span>
+    </div>
+  </div>
+
+  <div class="col-sm-8 right-box">
+<app-breadcrumb [pageNumber]='currentPage' id='{{subTopicId}}' type='targets'></app-breadcrumb>
+<h4 class="my-subtopic-heading"> <strong>System of Objectives</strong></h4>
+<div class="clearfix"></div>
+<div *ngIf='allTopicParamOptions'>
+    <div class="row row-sm" *ngFor="let topicParam of topicParams; let i = index" [attr.data-index]="i">
+      <div class="col-sm-6 target-options">
+        <div class="col-sm-8" >
+          <h3 class="ranking-heading"  [class.top-heading]="topicParam.Id===topicParams[0].Id"
+          >{{topicParam.Name}}</h3>
+        </div>
+        <!-- <div class="col-sm-4">
+          <div *ngIf="topicParam.Id===topicParams[0].Id">
+            <h3 class="priority-heading">Priority</h3>
+            <div class="radio-heading">
+               <div class="lbl-priority">
+              <span class="low-text">Low</span>
+              <label class="low-val">1</label>              
+            </div>
+              <div class="lbl-priority">
+              <span class="med-text">Med</span>
+              <label class="med-val">2</label>
+            </div>
+              <div class="lbl-priority">
+              <span class="high-text">High</span>
+              <label class="high-val">3</label>
+            </div>  
+            </div>
+          </div>
+        </div> -->
+        <div class="clearfix"></div>
+        <!-- Begins Options Begins-->
+        
+        <app-topicParamOption isOpposite='false' [topicParamId]='topicParam.Id' (onTopicParamChange)='onTopicParamChange($event)' isName='false'
+        [topicParamOptions]='allTopicParamOptions'></app-topicParamOption> 
+          <!--Ends Options Ends -->
+        </div>
+
+        <div class="col-sm-6 target-options">
+          <div *ngIf="isOpositeParam(topicParam,i+1);">
+            <div class="col-sm-8" >
+              <div class="clearfix"></div>
+              <h3 class="ranking-heading opposite" [class.top-heading]="topicParam.Id===topicParams[0].Id">{{opositeTopicParam.Name}}</h3>
+            </div>
+            <!-- <div class="col-sm-4">
+              <div *ngIf="topicParam.Id===topicParams[0].Id">
+                <h3 class="priority-heading">Priority</h3>
+                <div class="radio-heading opposite">
+                <div class="lbl-priority">
+              <span class="low-text">Low</span>
+              <label class="low-val">1</label>              
+            </div>
+            <div class="lbl-priority">
+              <span class="med-text">Med</span>
+              <label class="med-val">2</label>
+            </div>
+              <div class="lbl-priority">
+              <span class="high-text">High</span>
+              <label class="high-val">3</label>
+            </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="clearfix"></div>
+            <!-- Begins Options Begins-->
+            <app-topicParamOption [oppositeTopicParamId]='currentTopicParamId' isOpposite='true' [topicParamId]='opositeTopicParam.Id' isName='false'
+            [topicParamOptions]='allTopicParamOptions'></app-topicParamOption>
+              <!-- Ends Options Ends-->
+            </div>
+          </div>
+        </div>
+</div>
+
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-primary"  (click)='previousView()'>Back</button>
+          <div class="form-group pull-right">
+            <button type="button" class="btn btn-danger" (click)='skipView()'>Skip</button>
+            <button type="submit" class="btn btn-primary"  >Next</button>
+          </div>
+          <p></p><p></p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!---Topic with options view-->
+  <div *ngIf="subTopicDetail && subTopicDetail.HasTargetOptions===false">
+    <form #topicParamForm="ngForm" novalidate (ngSubmit)="submitForm(topicParamForm)" class="form-horizontal">
+     <div class="col-sm-2 col-sm-offset-1">
+      <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+        <img src="../../assets/images/sign-info.png" height='32' width="32">
+        <span class="text-white">
+          Select a topic/topics you would like to find out more about.
+        </span>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+
+      <ol class="content">
+        <li *ngFor='let topicParam of topicParams'>      
+
+          <input id='{{topicParam.Id}}' class="radio-custom" type="radio" 
+          [value]="topicParam.Id" name="topicParamId" [ngModel]="topicParam.Id" required checked>
+          <label for='{{topicParam.Id}}' class="radio-custom-label">{{topicParam.Name}}
+          </label>
+
+        </li>
+      </ol>
+
+      <div class="col-sm-12">
+        <button type="button" class="btn btn-primary"  (click)='previousView()'>Back</button>
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-danger"  (click)='skipView(true)'>Skip</button>
+          <button type="submit" class="btn btn-primary"  >Next</button>
+        </div>
+        <p></p><p></p>
+      </div>
+    </div>  
+  </form>
+
+
+
+</div>

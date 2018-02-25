@@ -1,0 +1,85 @@
+<div class="row">
+<div class="container">
+		<div  class="box_shadow" style="border:3px solid #7f7f7f; width:100%; float:left;">
+
+<div class='col-sm-2'> 
+<!-- <div class="text-center"><img class="" src="/src/assets/images/codico_logo.png" class="codico-logo"></div> -->
+<div class="text-center"><img class="img-responsive" src="../../assets/images/codico_logo.png" class="codico-logo"></div>
+		<img src="../../assets/images/ipek_logo.png" class="ipek-logo img-responsive" >
+		<br/>
+	<div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+		<img src="../../assets/images/sign-info.png" height='32' width="32">
+		<span class="text-white">Select a category to which you would like to receive information and design guidelines.</span>
+	</div>
+</div>
+	<!-- <div class="col-sm-7 right-box"> -->
+	<div class="col-sm-10 right-box" style="padding:15px 0">
+		<div class="row">
+				<div class="col-sm-12">
+						<app-wizard  step='1' type='category'></app-wizard>
+				</div>
+					<div class="col-sm-6" >
+						<div class="row">
+							<div class="col-sm-12" >
+								<ng-container *ngFor='let category of categories; let i = index' [attr.data-index]="i">
+									<ng-container *ngIf="category.Id == 2">
+										<h3  class="text-info cat-head" style="text-align:left;">{{category.Name}}</h3>
+										<app-subcategory (onSubcategorySelected)='onSubcategorySelected($event,0)' [categoryId]='category.Id'></app-subcategory>
+									</ng-container>
+								</ng-container>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6">
+						<div class="row">
+							<div class="col-sm-12">
+								<ng-container *ngFor='let category of categories; let i = index' [attr.data-index]="i">
+									<ng-container *ngIf="category.Id == 1">
+										<h3  class="text-info cat-head" style="text-align:right;">{{category.Name}}</h3>
+										<app-subcategory (onSubcategorySelected)='onSubcategorySelected($event,0)' [categoryId]='category.Id'></app-subcategory>
+									</ng-container>
+								</ng-container>
+							</div>
+							<div class="col-sm-12" *ngFor='let category of secCategories; let i = index' [attr.data-index]="i">
+								<h3 class="text-info cat-head"  style="text-align:right;">{{category.Name}}</h3>
+								<app-subcategory (onSubcategorySelected)='onSubcategorySelected($event,1)' [categoryId]='category.Id'></app-subcategory>
+							</div>  
+						</div>
+					</div>
+		</div>
+	</div>
+
+
+
+
+
+
+		<!-- <div class="col-sm-6" *ngFor='let category of categories; let i = index' [attr.data-index]="i">
+			<div class="box" >
+				<h3 class="text-info cat-head" [ngClass]="i%2==0 ? '': 'text-right'">{{category.Name}}</h3>
+				<app-subcategory (onSubcategorySelected)='onSubcategorySelected($event)' [categoryId]='category.Id'></app-subcategory>
+
+			</div>
+			
+		</div>
+		
+			
+		<div class="col-sm-6" *ngFor='let category of secCategories; let i = index' [attr.data-index]="i">
+			<div class="box">
+				<h3 class="text-info cat-head" [ngClass]="i%2==0 ? '': 'text-right'">{{category.Name}}</h3>
+				<app-subcategory (onSubcategorySelected)='onSubcategorySelected($event)' [categoryId]='category.Id'></app-subcategory>
+
+			</div>
+			<div class="text-center" *ngIf="i==2">
+				<img src="../../assets/images/category_info_img.png" alt="Info Image"/>
+			</div>
+		</div>  -->
+	
+
+
+
+
+	</div>
+</div>
+</div>

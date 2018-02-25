@@ -1,0 +1,56 @@
+<!-- http://jasonwatmore.com/post/2017/04/19/angular-2-4-router-animation-tutorial-example -->
+
+<div class="row justify-content-end">
+  <div class="col-sm-6 col-sm-offset-3" >  
+    <div class="card shadow">
+      <form #form='ngForm' (ngSubmit)='authenticate()' *ngIf='active'>
+
+        <fieldset>
+          <legend>
+            <h2>Login Here</h2>
+          </legend>
+          <div class="form-group" [ngClass]="{'has-error':Email.invalid && Email.touched}">
+            <label for='Email'  class="form-control-label">Email</label>
+            <input type="text" class="form-control" name="Email" placeholder="Enter the Email"
+            required [(ngModel)]='loginModel.Email'
+            #Email='ngModel' email/>
+            <div class="invalid-feedback"  *ngIf='Email.invalid && Email.touched'>Invalid Email entered</div>
+          </div>
+
+          
+          <div class="form-group" [ngClass]="{'has-error':Password.invalid && Password.touched}">
+            <label for="Password"  class="form-control-label">Password</label>
+            <input type="Password" class="form-control" placeholder="Enter the password" name="Password" 
+            required [(ngModel)]='loginModel.Password'
+            #Password='ngModel'>
+            <div class="invalid-feedback"  *ngIf='Password.invalid && Password.touched'></div>
+          </div>
+
+
+          <div class="form-group">
+          <label class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" [(ngModel)]='loginModel.RememberMe' name="RememberMe" value='true' #RememberMe='ngModel'>
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Remember Me</span>
+  </label>
+         </div>
+
+         <div class="form-group">
+          <div class="pull-right">
+            <input type="submit" class="btn btn-primary " value="Login" [disabled]='form.invalid || submitted'>
+            <a class="btn btn-default" routerLink="/home">Cancel</a>  
+          </div>
+        </div>
+      </fieldset>
+    </form>
+
+    <div class="m-b">
+      <!-- Forgot your password ?  <a routerLink="/forgotpassword" class="text-danger">Reset it here.</a> -->
+    </div>  
+    <div class="clearfix"></div>
+    <app-model-errors [errors]="errors"></app-model-errors>   
+
+  </div>
+
+</div>
+</div>

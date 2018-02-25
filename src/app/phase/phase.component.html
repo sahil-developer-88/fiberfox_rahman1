@@ -1,0 +1,76 @@
+<div class="row">
+
+
+  <div class="col-sm-10 col-md-offset-1">
+   <app-wizard step='2' id='{{subCategoryId}}' type='phase'></app-wizard>
+ </div>
+
+ <div class='col-sm-2 col-sm-offset-1'>
+  <div class="text-center"><img class="" src="../../assets/images/codico_logo.png" class="codico-logo"></div>
+  <img src="../../assets/images/ipek_logo.png" class="ipek-logo" >
+  <br/>
+  <div style='background-color: orange;padding: 20px;border: 2px solid darkgray;margin-top: 50px;'>
+    <img src="../../assets/images/sign-info.png" height='32' width="32">
+    <span class="text-white">
+      Select a phase of product development in  which you are situated now. Information about different phases and product engineering activities can be obtained by clicking on the corresponding term.</span>
+  </div>
+</div>
+
+<div class="col-sm-9 right-box">
+  <app-breadcrumb [pageNumber]='currentPage' id='{{subCategoryId}}' type='phase'></app-breadcrumb>
+  <div class="col-sm-4">
+    <div class="box defaultText">
+      <a href="javascript:void(0);" style='cursor:default;'>Activities of product engineering
+      </a>
+    </div>
+  </div>
+
+  <div class="col-sm-2" *ngFor='let topic of topics'>
+    <div class="box heading">
+      <a href="javascript:void(0);">{{topic.Name}}</a>
+    </div>
+  </div>
+
+  <!--10-->
+  <div class="clearfix"></div>
+  <!--Content-->
+
+  <div style='margin-top:25px;'>
+    <div *ngFor='let activity of activities'>
+
+      <!--left side activities-->
+      <div class="col-sm-4">
+        <div class="box" [class.active]="subTopicsCount[activity.Id] && subTopicsCount[activity.Id].count!=0">
+          <a href="javascript:void(0);" (click)='loadSubTopics(activity.Id)'>{{activity.Name}}</a>
+        </div>
+      </div>     
+      <!--right side content-->
+      <div class="col-sm-2" *ngFor='let topic of topics'>        
+        <div class="box topic-box" [class.active]="subTopicsCount[topic.Id+'_'+activity.Id]>0">
+          <div *ngIf='subTopicsCount[activity.Id] && subTopicsCount[activity.Id].count!=0'>
+            <a href="javascript:void(0);"
+            (click)='onPhaseSelected(topic,activity)'>{{subTopicsCount[topic.Id+'_'+activity.Id]}} Topics</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+<!-- <div class="{{timerClass}} col-md-offset-4"> --><!--for accordingly to the phase-->
+  <div class="col-sm-6 col-md-offset-4">
+    <h4 class="text-right"><strong>Time</strong></h4>
+    <div class="arrow">
+      <div class="line"></div>
+      <div class="point"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-12">
+    <button type="button" class="btn btn-primary" (click)='previousView()'>Back</button>
+    <p></p><p></p>
+  </div>
+
+</div>
+</div>

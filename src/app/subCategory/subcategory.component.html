@@ -1,0 +1,16 @@
+<div class="subcategory">
+	<ng-container *ngFor='let subcategory of subCategories'>
+
+			<ng-container *ngIf="subcategory.isValid == true">
+					<div class="box" (click)='subcategorySelected(subcategory)'><a href="javascript:void(0);">{{subcategory.Name}}</a></div>
+			</ng-container>
+			
+			<ng-container  *ngIf="subcategory.isValid == false">
+					<div class="box is_valid_subcategory">{{subcategory.Name}}</div>
+			</ng-container>
+
+			
+	</ng-container>
+	
+</div>
+

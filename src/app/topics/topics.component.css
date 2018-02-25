@@ -1,0 +1,83 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+ul.phases{
+list-style: none;
+padding-left: 0px;
+}
+ul.phases li
+{
+padding: 7px;
+/* border: 2px solid #000; */
+border: 1px solid #7f7f7f;
+background-color: #e3e3e3;
+border-radius: 10px;
+margin: 5px auto;
+font-size: 14px;
+font-weight: 600;
+}
+
+.box.defaultText{
+    background-color: #27458b;
+    text-align: center;
+    border-radius: 0;
+    padding:5px; 
+    /* text-align: center; */
+}
+.box.defaultText a{
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    
+}
+
+
+ul.phases li.active
+{
+	border: 1px solid #7f7f7f;
+ background-color: #7f7f7f;
+ margin-bottom: 5px;   
+}
+
+ul.phases li.active a
+{
+    color:#FFF;    
+}
+ul.phases li a{
+    color:#7f7f7f;    
+}
+
+ul.content{
+list-style: none;
+padding-left: 0px;
+}
+
+ul.content li{
+padding: 7px;   
+margin:7px auto ;
+
+background: #b3b3b3;
+background: -moz-linear-gradient(left, #b3b3b3 0%, #b3b3b3 26%, #b6b6b6 27%, #b4b4b4 27%, #b6b6b6 28%, #b6b6b6 30%, #b9b9b9 30%, #b9b9b9 32%, #bdbdbd 33%, #bebebe 35%, #c0c0c0 35%, #c9c9c9 39%, #d1d1d1 42%, #d3d3d3 42%, #d2d2d2 43%, #d7d7d7 44%, #d7d7d7 45%, #dcdcdc 46%, #dcdcdc 47%, #d9d9d9 47%, #c7c7c7 54%, #c2c2c2 56%, #bfbfbf 57%, #b8b8b8 59%, #b9b9b9 60%, #b4b4b4 61%, #b5b5b5 61%, #aeaeae 63%, #acacac 65%, #a9a9a9 65%, #a9a9a9 66%, #a4a4a4 67%, #a2a2a2 68%, #9b9b9b 70%, #9a9a9a 71%, #979797 71%, #959595 73%, #919191 74%, #919191 74%, #8b8b8b 76%, #929292 77%, #afafaf 81%, #b2b2b2 82%, #b9b9b9 83%, #b9b9b9 83%, #bcbcbc 83%, #c0c0c0 84%, #c4c4c4 85%, #c3c3c3 85%, #d0d0d0 87%, #d0d0d0 87%, #d3d3d3 87%, #dcdcdc 89%, #e2e2e2 91%, #e1e1e1 91%, #e4e4e4 91%, #f1f1f1 95%, #f1f1f1 100%);
+background: -webkit-linear-gradient(left, #b3b3b3 0%,#b3b3b3 26%,#b6b6b6 27%,#b4b4b4 27%,#b6b6b6 28%,#b6b6b6 30%,#b9b9b9 30%,#b9b9b9 32%,#bdbdbd 33%,#bebebe 35%,#c0c0c0 35%,#c9c9c9 39%,#d1d1d1 42%,#d3d3d3 42%,#d2d2d2 43%,#d7d7d7 44%,#d7d7d7 45%,#dcdcdc 46%,#dcdcdc 47%,#d9d9d9 47%,#c7c7c7 54%,#c2c2c2 56%,#bfbfbf 57%,#b8b8b8 59%,#b9b9b9 60%,#b4b4b4 61%,#b5b5b5 61%,#aeaeae 63%,#acacac 65%,#a9a9a9 65%,#a9a9a9 66%,#a4a4a4 67%,#a2a2a2 68%,#9b9b9b 70%,#9a9a9a 71%,#979797 71%,#959595 73%,#919191 74%,#919191 74%,#8b8b8b 76%,#929292 77%,#afafaf 81%,#b2b2b2 82%,#b9b9b9 83%,#b9b9b9 83%,#bcbcbc 83%,#c0c0c0 84%,#c4c4c4 85%,#c3c3c3 85%,#d0d0d0 87%,#d0d0d0 87%,#d3d3d3 87%,#dcdcdc 89%,#e2e2e2 91%,#e1e1e1 91%,#e4e4e4 91%,#f1f1f1 95%,#f1f1f1 100%);
+background: linear-gradient(to right, #b3b3b3 0%,#b3b3b3 26%,#b6b6b6 27%,#b4b4b4 27%,#b6b6b6 28%,#b6b6b6 30%,#b9b9b9 30%,#b9b9b9 32%,#bdbdbd 33%,#bebebe 35%,#c0c0c0 35%,#c9c9c9 39%,#d1d1d1 42%,#d3d3d3 42%,#d2d2d2 43%,#d7d7d7 44%,#d7d7d7 45%,#dcdcdc 46%,#dcdcdc 47%,#d9d9d9 47%,#c7c7c7 54%,#c2c2c2 56%,#bfbfbf 57%,#b8b8b8 59%,#b9b9b9 60%,#b4b4b4 61%,#b5b5b5 61%,#aeaeae 63%,#acacac 65%,#a9a9a9 65%,#a9a9a9 66%,#a4a4a4 67%,#a2a2a2 68%,#9b9b9b 70%,#9a9a9a 71%,#979797 71%,#959595 73%,#919191 74%,#919191 74%,#8b8b8b 76%,#929292 77%,#afafaf 81%,#b2b2b2 82%,#b9b9b9 83%,#b9b9b9 83%,#bcbcbc 83%,#c0c0c0 84%,#c4c4c4 85%,#c3c3c3 85%,#d0d0d0 87%,#d0d0d0 87%,#d3d3d3 87%,#dcdcdc 89%,#e2e2e2 91%,#e1e1e1 91%,#e4e4e4 91%,#f1f1f1 95%,#f1f1f1 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3b3b3', endColorstr='#f1f1f1',GradientType=1 );
+
+}
+
+ul.content li a{
+    color: #000;
+}
+ul.content li span{
+	color: #7f7f7f;
+}
+.topic-heading{
+	color: #27458b;
+	margin: 0px;
+	text-align: center;
+	border:1px solid #27458b;
+	border-radius: 3px; 
+	padding:5px;
+	font-size: 16px;
+	font-weight: 700; 
+}

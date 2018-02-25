@@ -1,0 +1,152 @@
+.row{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+div.radio-heading{
+  margin-bottom: 5px;  
+/* padding-left: 12px; */
+}
+div.radio-heading label{
+  margin-left:5px; 
+  margin-right:3px;   
+}
+div.radio-heading span{
+  margin-left:2px; 
+  margin-right:3px;   
+  
+}
+
+div.radio-heading.opposite{
+  
+}
+
+.ranking-heading{
+  background-color: #bfbfbf;
+  margin: 0px;
+  color: #000;
+  border-radius: 7px;
+  padding:10px; 
+  text-align: center;
+  font-size: 16px;
+  margin-top:10px; 
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.ranking-heading.opposite{
+
+}
+
+.ranking-heading.top-heading{
+  margin-top:50px; 
+}
+.priority-heading{
+  margin: 0px;
+  color: #3f5a9a;
+  padding:10px; 
+  text-align: center;
+  font-size: 14px;
+  margin-top:10px; 
+  font-weight: 600; 
+}
+
+.my-subtopic-heading{
+  color: #FFF;
+  background-color: #3f5a9a;
+  padding: 5px;
+  border: 1px solid #3f5a9a;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+ol.content{
+	margin-top: 50px;
+list-style: none;
+counter-reset:mycounter;
+padding-left: 0px;
+padding-right: 50px;
+}
+
+ol.content li{
+border: 1px solid gray;
+padding: 10px;   
+margin:7px auto ; 
+
+position:relative; 
+  margin-left: 35px;
+  
+}
+
+ol.content li a{
+    
+}
+
+ol.content li:before {
+  content:counter(mycounter); 
+  counter-increment:mycounter;
+  position:absolute;
+  top:5px;
+  left:-37px;
+  width:32px;
+  height:32px;
+  line-height:32px;
+  /* border-radius:50%; */
+  color:#fff;
+  background:teal;
+  text-align:center;
+}
+
+label.low-val,label.med-val,label.high-val{
+  height: 23px;
+  width: 23px;
+  padding:0px;
+  border-radius: 50%; 
+  background-color:#00d2b4;
+  color: #FFF;
+  text-align: center;
+}
+label.med-val{
+  background-color:#009682; 
+
+}
+label.high-val{
+  background-color:#004b41;
+}
+
+div.lbl-priority{float:left;width: 33%;}
+
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Portrait
+\* ------------------------------------------------------------ */
+/* Portrait */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /*@media only screen and (max-width: 768px) {*/
+div.lbl-priority{float:left;width: 23.3%;margin-left:10%; }
+}
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Landscape
+\ *------------------------------------------------------------ */
+/* Landscape */
+@media only screen and (min-device-width : 420px) and (max-device-width : 1024px) and (orientation: landscape) {
+div.lbl-priority span.low-text, div.lbl-priority span.med-text,div.lbl-priority span.high-text{display: none;}
+div.lbl-priority{float:left;width: 23.3%;margin-left:10%; }
+}
+
+
+/* ------------------------------------------------------------ *\
+                       Tablet Orientation
+\* ------------------------------------------------------------ */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+div.target-options .col-sm-8,.col-sm-4{
+  width: 100%;
+}
+div.lbl-priority span.low-text, div.lbl-priority span.med-text,div.lbl-priority span.high-text{display: none;}
+div.lbl-priority{float:left;width: 23.3%;margin-left:10%; }
+
+}

@@ -1,0 +1,45 @@
+<div *ngIf='subTopicDetail && menuItems && menuItems.length>0'>
+			<div class="box" *ngIf='!subTopicDetail.HasTargetOptions && !subTopicDetail.HasBoundaryConditions'>
+				<h5 class="text-center">{{subTopicDetail.Name}}</h5>
+			</div>
+			<div *ngIf='subTopicDetail.HasTargetOptions'>
+			<div class="box-m-t">
+				<h5 class="text-center">{{subtopic.Name}}</h5>
+			</div>
+			<div class="box-ranking" >
+				<h5 class="text-center">Ranking according to importance</h5>
+			</div>
+		</div>
+			<div *ngIf='subTopicDetail.HasBoundaryConditions'>
+			<div class="box-m-t" *ngIf='subtopic'>
+				<h5 class="text-center">{{subtopic.Name}}</h5>
+			</div>
+			<div class="box-ranking" >
+				<h5 class="text-center"> Ranking according to importance</h5>
+			</div>
+			</div>
+		<div class="fancy-collapse-panel">
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default" *ngFor='let menuItem of menuItems'>
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="javascript:void(0)" data-target="collapseOne"
+						[class.opened]="expandedMenuId===menuItem.Id"	(click)="toggleMenuItem(menuItem.Id)">
+					{{menuItem.Name}}
+						</a>
+					</h4>
+				</div>
+				<div id="collapseOne" class="panel-collapse collapse" [class.in]="expandedMenuId===menuItem.Id">
+					<div class="panel-body">
+						<ol class="content">
+							<li class="list-group-item" *ngFor="let subMenuItem of subMenuItems">
+								<a href="javascript:void(0)" (click)="showContent(subMenuItem)">
+					{{subMenuItem.Name}}</a>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,112 @@
+  div.lbl .param-options
+  {
+    padding: 7px;
+    border: 1px solid darkgreen;
+    background-color: #FFF;
+    border-radius: 10px;
+    margin: 0 auto;
+  }
+
+  div.lbl .param-options a, div.lbl .param-options div{
+    color:#000;
+    font-weight:600;
+    font-size:14px;    
+  }
+
+
+  div.rdo .param-options
+  {
+    /* padding: 7px;
+    border: 2px solid darkgray;
+    background-color: #FFF;
+    border-radius: 10px; */
+    margin-top: 10px;
+  }
+
+div.rdo:nth-child(1){
+  /* margin-top: 20px; */
+}
+
+  div.rdo .param-options label.radio-custom-label{
+    margin:0px;
+    width:33%;
+    float:left;
+    margin-bottom:27px;
+
+  }
+
+
+  .radio-custom + .radio-custom-label.low-color:before {
+    background-color:#00d2b4;
+  }
+
+  .radio-custom + .radio-custom-label.med-color:before {
+    background-color:#009682; 
+  }
+  .radio-custom + .radio-custom-label.high-color:before {
+    background-color:#004b41;
+  }
+  
+  .checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before
+  {border:none;}
+  div.overlay{z-index:999;background:rgba(255,255,255,.5);pointer-events: none;
+    opacity: 0.4;}
+
+    .refresh-icon i{
+      color: blue;
+      float: right;
+      padding-top: 3px;
+    }
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Portrait
+\* ------------------------------------------------------------ */
+/* Portrait */
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+    /*@media only screen and (max-width: 768px) {*/
+div.lbl .param-options a, div.lbl .param-options div{
+    text-align: center;
+  }
+  .checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    float: none;
+  }
+  div.rdo .param-options label.radio-custom-label{    
+    width:23.3%;float: left;margin-left: 10%;
+  }
+}
+
+/* ------------------------------------------------------------ *\
+                       Mobile Orientation Landscape
+\ *------------------------------------------------------------ */
+/* Landscape */
+@media only screen and (min-device-width : 420px) and (max-device-width : 1024px) and (orientation: landscape) {
+div.lbl .param-options a, div.lbl .param-options div{
+    text-align: center;
+  }
+  div.rdo .param-options label.radio-custom-label{    
+    width:23.3%;float: left;margin-left: 10%;
+  }
+  .checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    float: none;
+  }
+}
+
+
+/* ------------------------------------------------------------ *\
+                       Tablet Orientation
+\* ------------------------------------------------------------ */
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+div.target-options .col-sm-8,.col-sm-4{
+  width: 100%;
+}
+div.lbl .param-options a, div.lbl .param-options div{
+    text-align: center;
+  }
+  div.rdo .param-options label.radio-custom-label{    
+    width:23.3%;float: left;margin-left: 10%;
+  }
+  .checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+    float: none;
+  }
+}
